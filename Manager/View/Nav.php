@@ -14,7 +14,8 @@
         <div class="Nav_Block"><a href="">首頁</a><br/></div>
     </div>
     <div>
-        <div class="Nav_Block"><a href="">員工管理</a><br/></div>
+        <div class="Nav_Block">員工管理<br/></div>
+        <!-- <img style="top:20px;" src="./Img/add_icon.png" /> -->
         <div>
             <div class="Nav_Func"><a href="">員工組別</a><br/></div>
             <div class="Nav_Func"><a href="">員工小組成員管理</a><br/></div>
@@ -25,7 +26,7 @@
         </div>
     </div>
     <div>
-        <div class="Nav_Block"><a href="">請假管理</a><br/></div>
+        <div class="Nav_Block">請假管理<br/></div>
         <div>
             <div class="Nav_Func"><a href="">請假簽核關卡設定</a><br/></div>
             <div class="Nav_Func"><a href="">請假申請</a><br/></div>
@@ -35,7 +36,7 @@
         </div>
     </div>
     <div>
-        <div class="Nav_Block"><a href="">出勤管理</a><br/></div>
+        <div class="Nav_Block">出勤管理<br/></div>
         <div>
             <div class="Nav_Func"><a href="">出勤記錄一覽</a><br/></div>
         </div>
