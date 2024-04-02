@@ -41,6 +41,9 @@
             <div class="Nav_Func"><a href="">出勤記錄一覽</a><br/></div>
         </div>
     </div>
+    <footer style="background-color: #666665; height:100px;">
+
+    </footer>
     <script src="./Javascript/Nav.js"></script>
 </body>
 </html>

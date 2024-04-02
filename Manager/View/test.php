@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:#888888;"> 
-    <div style="text-align:center;">
-        <header>測試</header>
-    </div>
-    <div style="display:flex;">
-        <div style="flex:10 80%">
+<body style="background-color:#eeeeee;"> 
+    <div style="display:flex; flex-wrap:nowrap">
+        <div style="flex:1;">
             <?php 
                 require_once "Nav.php";
             ?>
         </div>
         <div style="flex:6">
-            <?php
-                echo "test";
+            <?php 
+                require_once "LogIn.php";
+                require_once "View_Employee.php";
             ?>
         </div>
     </div>
