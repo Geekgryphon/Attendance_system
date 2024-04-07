@@ -9,12 +9,12 @@
     <div style="display:flex; flex-wrap:nowrap">
         <div style="flex:1;">
             <?php 
-                require_once "Nav.php";
+                require_once "menu.php";
             ?>
         </div>
         <div style="flex:6">
             <?php 
-                require_once "LogIn.php";
+                require_once "../../Common/View/SignInSuccess.php";
                 require_once "View_Employee.php";
             ?>
         </div>

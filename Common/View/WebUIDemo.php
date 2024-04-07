@@ -8,7 +8,7 @@
         #EmployeeID{
             border: 1px solid #d9d9d9;
             border-radius: 5px;
-            pading: 20px;
+            padding: 20px;
             height: 25px;
             font-size: 14px;
             font-weight: 100;

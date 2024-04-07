@@ -1,0 +1,60 @@
+body{
+    margin: auto auto;
+}
+
+.menu_last_button{
+    background-color: #529dda;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+}
+
+
+.menu_button{
+    background-color: #529dda;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid black;
+    border-bottom: 0px;
+    color: white;
+}
+
+.submenu_button{
+    background-color: #edff4f;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#Company_Logo{
+    width: 100%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+button {
+    outline: none;
+    border: none;
+    color: black;
+    background-color: inherit;
+ }
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.selected_submenu_button{
+    background-color: #faa9e2;
+}
