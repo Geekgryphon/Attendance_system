@@ -1,21 +1,21 @@
 <?php 
 
-class DB(){
+class DB{
 
-    $host = 'localhost';
-    $dbname = "AttendanceSystem";
-    $username = "root";
-    $password = "12345678";
+    private $host = 'localhost';
+    private $dbname = "AttendanceSystem";
+    private $username = "root";
+    private $password = "12345678";
 
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e){
-        echo "連線失敗:" . $e->getMessage();
-    }
-
-    private function __construct(){
+    public function __construct(){
         
+        try {
+            $pdo = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            var_dump("連線成功");
+        } catch(PDOException $e){
+            echo "連線失敗:" . $e->getMessage();
+        }
     }
 
 }

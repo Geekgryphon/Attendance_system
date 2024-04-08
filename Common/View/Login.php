@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once "../Function/DB.php"; 
+        $db = new DB();
+    ?>
     <form action="">
         <input type="text" name="Account">
         <input type="password" name="Password">
