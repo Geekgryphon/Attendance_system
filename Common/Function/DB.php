@@ -16,7 +16,7 @@ class DB{
         } catch(PDOException $e){
             echo "連線失敗:" . $e->getMessage();
         }
-    }
+    } 
 
 }
 
