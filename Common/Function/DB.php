@@ -12,15 +12,27 @@ class DB{
         try {
             $pdo = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            var_dump("連線成功");
         } catch(PDOException $e){
-            echo "連線失敗:" . $e->getMessage();
+            echo $e->getMessage();
         }
     } 
 
+    public function query($sql, $arr){
+        $stmt -> $pdo->prepare($sql);
+
+        foreach($arr as $name =>  $value){
+            $stmt->bindParam($name, $value);
+        }
+
+        $stmt->execute();
+
+
+    }
+
 }
 
-
+// fetchAll() fetch(0)
+// rowCount() 取出資料的總數
 
 // $sql = "SELECT * FROM Employee";
 // $stmt = $pdo->query($sql);
