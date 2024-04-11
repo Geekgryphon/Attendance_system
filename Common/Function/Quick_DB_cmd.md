@@ -16,8 +16,8 @@ create table Employee (
 create table SignRecords(
     EmployeeID varchar(20) not NULL,
     SignDay Date,
-    SignIn  TIME,
-    SignOut TIME,
+    SignInTime  TIME,
+    SignOutTime TIME
 );
 
 create table EmployeeClass(

@@ -7,40 +7,43 @@ class DB{
     private $username = "root";
     private $password = "12345678";
 
+    private $Con;
+    private $stmt;
+
     public function __construct(){
         
         try {
-            $pdo = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->Con = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
+            $this->Con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+            // $options = [
+            //     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            //     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            //     PDO::ATTR_EMULATE_PREPARES => false,
+            // ];
         } catch(PDOException $e){
             echo $e->getMessage();
         }
     } 
 
     public function query($sql, $arr){
-        $stmt -> $pdo->prepare($sql);
+        $this->stmt = $this->Con->prepare($sql);
+        $this->stmt->execute($arr);
+        return $this->stmt->fetchAll();
+    }
 
-        foreach($arr as $name =>  $value){
-            $stmt->bindParam($name, $value);
-        }
-
-        $stmt->execute();
-
-
+    public function rowCount(){
+        return $this->stmt->rowCount();
     }
 
 }
 
-// fetchAll() fetch(0)
-// rowCount() 取出資料的總數
 
-// $sql = "SELECT * FROM Employee";
-// $stmt = $pdo->query($sql);
+// DB範例
+// $oDb = new DB();
+// $result = $oDb->query("SELECT * from employee where EmployeeID like :EmployeeID", array(':EmployeeID' => '%EMP%'));
+// print_r($result);
 
-// $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// foreach ($users as $user) {
-//     echo "User ID: " . $user['EmployeeID'] . "<br>";
-// }
 
 ?>
