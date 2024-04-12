@@ -31,6 +31,12 @@ class Sign{
                            array($empID, $this->currentDate));
     }
 
+    public function GetSignDate($empID, $offset){
+        $this->oDb->query("SELECT SignDay, SignInTime, SignOutTime
+                           WHERE EmployeeID = ? LIMIT 10 OFFSET ? ",
+                           array($empID, $offset));
+    }
+
 }
 
 

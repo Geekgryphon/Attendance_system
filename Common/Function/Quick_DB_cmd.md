@@ -30,6 +30,7 @@ create table EmployeeClassRelation(
     EmployeeClassID int
 )
 
+-- 暫時先不做
 create table EmployeeTeam(
     EmployeeTeamID int AUTO_INCREMENT primary key,
     EmployeeTeamName nvarchar(60) not NULL,
@@ -54,7 +55,8 @@ create table LeaveDayApply (
 
 create table LeaveDayKind(
     LeaveDayKindID varchar(20) primary key,
-    LeaveDayKindName nvarchar(60) not NULL
+    LeaveDayKindName nvarchar(60) not NULL,
+    IsActive bit not NULL
 );
 
 create table LeaveSignLevel(
