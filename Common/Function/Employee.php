@@ -2,7 +2,12 @@
 require_once "DB.php";
 
 Class Employee{
-    private $oDb = new DB();
+    
+    private $oDb;
+
+    public function __construct() {
+        $this->oDb = new DB();
+    }
 
     public function CreateEmployeeAccount($extraNum, $ChtName){
 

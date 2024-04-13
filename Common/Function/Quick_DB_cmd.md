@@ -48,10 +48,39 @@ create table LeaveDayApply (
     LeaveEndDate TIMESTAMP not NULL,
     OffDay int NULL,
     OffHours int NULL,
+    LeaveSignLevelID varchar(20) not NULL,
     CurrentStep int not NULL,
     LeaveDayKindID varchar(20) not NULL,
-    FinalStep int not NULL
+    FinalStep int not NULL,
+    LeaveDayStateID varuchar(5) not NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+create table LeaveDayApplyDetail (
+    ApplyNo varchar(40) not NULL primary key,
+    Step int not NULL,
+    EmployeeID varchar(20) not NULL,
+    SignTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    IsApprove bit not default 0
+)
+
+-- 無法使用功能維護 通過 審核中 新單 不同意
+create table LeaveDayState (
+    LeaveDayStateID varchar(5) not NULL primary key,
+    LeaveDayStateName varchar(40) not NULL
+)
+
+insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
+values('A','通過')
+
+insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
+values('C','審核中')
+
+insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
+values('N','新單')
+
+insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
+values('D','不同意')
 
 create table LeaveDayKind(
     LeaveDayKindID varchar(20) primary key,
@@ -61,7 +90,7 @@ create table LeaveDayKind(
 
 create table LeaveSignLevel(
     LeaveSignLevelID varchar(20) primary key,
-    LeaveSignName nvarchar(60) not NULL
+    LeaveSignLevelName nvarchar(60) not NULL
 );
 
 create table LeaveSignLevelEveryStep(

@@ -7,7 +7,11 @@ Class Session{
     // $_SERVER['PHP_SELF']
     // basename($currentFile)
 
-    private $oDb = new DB();
+    private $oDb;
+
+    private function __construct() {
+        $this->oDb = new DB();
+    }
 
     public function Login($act, $pwd){
         $this->oDb->query("SELECT 1 from Employee where EmployeeID = ? and password = ? ", array($act, $pwd));
@@ -27,7 +31,7 @@ Class Session{
     }
 
     public function LogOut(){
-        session_unset():
+        session_unset();
         session_destroy();
     }
 

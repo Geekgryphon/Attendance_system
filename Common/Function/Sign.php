@@ -4,10 +4,15 @@ require_once "DB.php";
 
 class Sign{
 
-    private $oDb = new DB();
+    private $oDb;
+    private $currentDate;
+    private $currentTime;
 
-    private $currentDate = date('Y-m-d');
-    private $currentTime = date('H:i:s');
+    public function __construct() {
+        $this->oDb = new DB();
+        $this->currentDate = date('Y-m-d');
+        $this->currentTime = date('H:i:s');
+    }
 
     public function SignIn($empID){
 
