@@ -37,6 +37,10 @@ class DB{
         return $this->stmt->rowCount();
     }
 
+    public function fetchAll(){
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 
 
