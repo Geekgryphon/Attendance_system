@@ -30,15 +30,14 @@ class DB{
     public function query($sql, $arr){
         $this->stmt = $this->Con->prepare($sql);
         $this->stmt->execute($arr);
-        return $this->stmt->fetchAll();
     }
 
     public function rowCount(){
         return $this->stmt->rowCount();
     }
 
-    public function fetchAll(){
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function fetch(){
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 }

@@ -37,7 +37,7 @@
                 }
 
                 $oDb->query("SELECT * FROM employeeclass", array());
-                 $counts = $oDb->rowCount();
+                $counts = $oDb->rowCount();
 
                
             ?>
@@ -45,15 +45,17 @@
 
             <table>
                 <th>
-                    <tr>職員職位代碼</tr>
-                    <tr>職員職位代碼</tr>
+                    <td>職位代碼</td>
+                    <td>職位名稱</td>
                 </th>
                 <?php 
-                    foreach($row = $oDb->fetchAll()){
-                        echo "<td>";
-                        echo "<tr>" . $oDb->fetch($i) . "</tr>";
-                        echo "<tr>" . $oDb->fetch($i) . "</tr>";
-                        echo "</td>";
+
+                    for($i = 0; $i < $counts; $i++ ){
+                        $row = $oDb->fetch($i);
+                        echo "<tr>";
+                        echo "<td>" . $row["EmployeeClassID"] . "</td>";
+                        echo "<td>" . $row["EmployeeClassName"] . "</td>";
+                        echo "</tr>";
                     }
 
                 ?>
