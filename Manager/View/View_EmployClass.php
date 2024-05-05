@@ -57,15 +57,21 @@
                         echo "<td>" . $row["EmployeeClassName"] . "</td>";
                         echo "</tr>";
                     }
-
                 ?>
             </table>
+            <?php 
+                    echo "<br/>";
+                    echo "<a href=''>◀️</a>";
+                    echo "<a href=''>1</a>";
+                    echo "<a href=''>▶️</a>";
+            ?>
             <?php  } else {  ?>
                     <h3>沒錢</h3>
             <?php  } ?>
         </div>
     </div>
-    
-    
+     <!-- 1. 取得資料總數
+     2. 將資料劃分為 假設115筆  1 {1..10} 2 {1} 的物件 -->
+     
 </body>
 </html>
