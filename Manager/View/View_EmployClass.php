@@ -36,8 +36,31 @@
                     }
                 }
 
+
                 $oDb->query("SELECT * FROM employeeclass", array());
                 $counts = $oDb->rowCount();
+                $page = array();
+
+                $num_Hundreds_digit = ($counts / 100  < 1 ? 1 : ceil($counts / 100));
+                $num_tens_digits = floor(($counts % 100) / 10);
+                $num_unit_digit = $counts % 10;
+                $num_tens_digits  =  ($num_unit_digit > 0 ? $num_tens_digits+1 : $num_tens_digits);
+
+                for($i = 0; $i < $num_Hundreds_digit; $i++){
+                    $page[$i] = array();
+                    
+                    if($i < $num_Hundreds_digit - 1){
+                        for($j = 0;$j < 10;$j++){
+                            $page[$i][] = $j;
+                        }
+                    }
+                    else if($i == $num_Hundreds_digit - 1){
+                        for($j = 0; $j < $num_tens_digits; $j++){
+                            $page[$i][] = $j;
+                        }
+                    }
+                }
+
 
                
             ?>
@@ -60,6 +83,7 @@
                 ?>
             </table>
             <?php 
+                    
                     echo "<br/>";
                     echo "<a href=''>◀️</a>";
                     echo "<a href=''>1</a>";
