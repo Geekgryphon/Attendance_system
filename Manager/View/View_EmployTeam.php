@@ -19,14 +19,14 @@
             ?>
         </div>
         <div style="flex:6">
-            <a href="new_EmployClass.php">新增</a>
+            <a href="new_EmployTeam.php">新增</a>
             <?php 
                  require_once "../../Common/Function/DB.php";
                  require_once "../../Common/View/SignInSuccess.php";
                  $oDb = new DB();                 
 
 
-                $oDb->query("SELECT * FROM employeeclass", array());
+                $oDb->query("SELECT * FROM employeeteam", array());
                 $counts = $oDb->rowCount();
                 $page = array();
 
@@ -66,16 +66,16 @@
                     for($i = 0; $i < $counts; $i++ ){
                         $row = $oDb->fetch($i);
                         echo "<tr>";
-                        echo "<td>" . $row["EmployeeClassID"] . "</td>";
-                        echo "<td>" . $row["EmployeeClassName"] . "</td>";
-                        echo "<td><a href='edit_EmployClass.php?cmd=edit&EmployeeClassID=". $row["EmployeeClassID"] ."'>編輯</a>";
-                        echo "<td><a href='delete_EmployClass.php?cmd=delete&EmployeeClassID=". $row["EmployeeClassID"] ."'>刪除</a>";
+                        echo "<td>" . $row["EmployeeTeamID"] . "</td>";
+                        echo "<td>" . $row["EmployeeTeamName"] . "</td>";
+                        echo "<td><a href='edit_EmployTeam.php?cmd=edit&EmployeeTeamID=". $row["EmployeeTeamID"] ."'>編輯</a>";
+                        echo "<td><a href='delete_EmployTeam.php?cmd=delete&EmployeeTeamID=". $row["EmployeeTeamID"] ."'>刪除</a>";
                         echo "</tr>";
                     }
                     
                 ?>
             </table>
-            <?php echo "<a href='new_EmployClass.php'>新增</a>"; ?>
+            <?php echo "<a href='new_EmployTeam.php'>新增</a>"; ?>
             <?php 
                     
                     // echo "<br/>";
@@ -84,7 +84,8 @@
                     // echo "<a href=''>▶️</a>";
             ?>
             <?php  } else {  ?>
-                    <h3>沒錢</h3>
+                    <h3>甚麼都沒有</h3></br>
+                    <a href='new_EmployTeam.php'>新增</a>
             <?php  } ?>
         </div>
     </div>

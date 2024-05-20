@@ -8,12 +8,16 @@
 <body>
     <?php 
         require_once "Common/Function/DB.php";
+        require_once "Common/Function/Session.php";
 
         $oDb = new DB();
+        $oSession = new Session();
 
         if(count($_POST) > 0){
-            $oDb->query("SELECT 1 From Employee where EmployeeID = ? and Password = ? ", array($_POST["account"], $_POST["password"]));
+            $oSession->Login($_POST["account"], $_POST["password"]);
         }
+
+        
     ?>
     <form action="login.php" method="post">
         <label for="account">帳號:</label>

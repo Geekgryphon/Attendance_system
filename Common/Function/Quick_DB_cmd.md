@@ -32,9 +32,9 @@ create table EmployeeClassRelation(
 
 -- 暫時先不做
 create table EmployeeTeam(
-    EmployeeTeamID int AUTO_INCREMENT primary key,
-    EmployeeTeamName nvarchar(60) not NULL,
-)
+    EmployeeTeamID int PRIMARY key AUTO_INCREMENT,
+    EmployeeTeamName nvarchar(60) not NULL
+);
 
 create table EmployeeSubstitute(
     EmployeeSubstituteID int AUTO_INCREMENT primary key,
