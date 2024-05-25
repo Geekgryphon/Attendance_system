@@ -3,6 +3,7 @@ create database AttendanceSystem;
 create table Employee (
 	EmployeeID varchar(20) not NULL primary key,
     ChtName nvarchar(60) NULL,
+    PersonalID  varchar(20) NULL,
     Password varchar(80) NULL,
     Phone varchar(40) NULL,
     Address nvarchar(200) NULL,
@@ -26,8 +27,9 @@ create table EmployeeClass(
 )
 
 create table EmployeeClassRelation(
+    EmployeeClassRelationID int PRIMARY key AUTO_INCREMENT,
     EmployeeID varchar(20) not NULL,
-    EmployeeClassID int
+    EmployeeClassID int not NULL
 )
 
 -- 暫時先不做
