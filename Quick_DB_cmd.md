@@ -14,6 +14,24 @@ create table Employee (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+insert into Employee (
+    EmployeeID, ChtName, PersonalID, Password, 
+    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+) values (
+    'EMP00258', '聶小倩', 'A12345678', 'EMP00258',
+    '0912345678' ,'北興東路四號', 'example@gmail.com', 1
+    '爸爸', '0912345678' , now()
+)
+
+insert into Employee (
+    EmployeeID, ChtName, PersonalID, Password, 
+    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+) values (
+    'EMP00259', '睨採陳', 'A12345679', 'EMP00259',
+    '0912345678' ,'北興東路四號', 'example@gmail.com', 1
+    '爸爸', '0912345678' , now()
+)
+
 create table SignRecords(
     EmployeeID varchar(20) not NULL,
     SignDay Date,
