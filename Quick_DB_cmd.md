@@ -28,8 +28,8 @@ insert into Employee (
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
     'EMP00259', '睨採陳', 'A12345679', 'EMP00259',
-    '0912345678' ,'北興東路四號', 'example@gmail.com', 1
-    '爸爸', '0912345678' , now()
+    '0912345679' ,'北興東路四號', 'example@gmail.com', 1
+    '媽媽', '0912345679' , now()
 )
 
 create table SignRecords(
@@ -42,13 +42,16 @@ create table SignRecords(
 create table EmployeeClass(
     EmployeeClassID int AUTO_INCREMENT primary key,
     EmployeeClassName nvarchar(40) NULL
-)
+);
+
+insert into EmployeeClass(EmployeeClassName) values ('組長');
+insert into EmployeeClass(EmployeeClassName) values ('職員');
 
 create table EmployeeClassRelation(
     EmployeeClassRelationID int PRIMARY key AUTO_INCREMENT,
     EmployeeID varchar(20) not NULL,
     EmployeeClassID int not NULL
-)
+);
 
 -- 暫時先不做
 create table EmployeeTeam(

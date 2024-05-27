@@ -25,8 +25,8 @@
                 $oDb = new DB();
 
                 if(isset($_GET) and $_GET["cmd"] == 'delete'){
-                    $oDb->query("DELETE from employeeclass where EmployeeClassID = ?", array($_GET["EmployeeClassID"]));
-                    header("Location: View_EmployClass.php");
+                    $oDb->query("DELETE from LeaveDayState where LeaveDayStateID = ?", array($_GET["LeaveDayStateID"]));
+                    header("Location: View_LeaveDayState.php");
                 }
             ?>
         </div>

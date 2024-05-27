@@ -19,12 +19,12 @@
                 $oDb = new DB();    
 
                 if(count($_POST) > 0){
-                    $oDb->query("SELECT * FROM employeeclass where EmployeeClassName = ? ", array($_POST["EmployeeClassName"]));
+                    $oDb->query("SELECT * FROM LeaveDayState where LeaveDayStateName = ? ", array($_POST["LeaveDayStateName"]));
                     if ($oDb->rowCount() > 0){
                         echo "已有重複名稱的職員職位資料，新增失敗";
                     }else{
-                        $oDb->query("INSERT INTO employeeclass(EmployeeClassName) VALUES(?) ", array($_POST["EmployeeClassName"]));
-                        header("Location: View_EmployClass.php");
+                        $oDb->query("INSERT INTO LeaveDayState(LeaveDayStateName) VALUES(?) ", array($_POST["LeaveDayStateName"]));
+                        header("Location: View_LeaveDayState.php");
                     }
                 }
                 
@@ -36,8 +36,8 @@
                 require_once "../../Common/View/SignInSuccess.php";
                 $oDb = new DB();
             ?>
-            <form action="new_EmployClass.php" method="post">
-                <input type="text"  name="EmployeeClassName">
+            <form action="new_LeaveDayState.php" method="post">
+                <input type="text"  name="LeaveDayStateName">
                 <br/>
                 <button name="cmd" value="new">新增</button>
             </form>
