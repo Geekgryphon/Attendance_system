@@ -27,10 +27,11 @@ insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
-    'EMP00259', '睨採陳', 'A12345679', 'EMP00259',
-    '0912345679' ,'北興東路四號', 'example@gmail.com', 1
-    '媽媽', '0912345679' , now()
+    'EMP00259', '寧采臣', 'A12345679', 'EMP00259',
+    '0912345678' ,'北興東路五號', 'example@gmail.com', 1
+    '爸爸', '0912345678' , now()
 )
+
 
 create table SignRecords(
     EmployeeID varchar(20) not NULL,
