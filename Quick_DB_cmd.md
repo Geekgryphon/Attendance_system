@@ -1,5 +1,7 @@
 create database AttendanceSystem;
 
+use AttendanceSystem; 
+
 create table Employee (
 	EmployeeID varchar(20) not NULL primary key,
     ChtName nvarchar(60) NULL,
@@ -16,21 +18,22 @@ create table Employee (
 
 insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
-    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+    Phone, Address, Email, IsOutOfWork, 
+    EmergencyContact, EmergencyPhone, created_at
 ) values (
     'EMP00258', '聶小倩', 'A12345678', 'EMP00258',
-    '0912345678' ,'北興東路四號', 'example@gmail.com', 1
-    '爸爸', '0912345678' , now()
-)
+    '0912345678' ,'北興東路四號', 'example@gmail.com', 1,
+    '媽媽', '0912345678' , now()
+);
 
 insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
     'EMP00259', '寧采臣', 'A12345679', 'EMP00259',
-    '0912345678' ,'北興東路五號', 'example@gmail.com', 1
+    '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
     '爸爸', '0912345678' , now()
-)
+);
 
 
 create table SignRecords(
@@ -54,6 +57,8 @@ create table EmployeeClassRelation(
     EmployeeClassID int not NULL
 );
 
+drop database AttendanceSystem;
+
 -- 暫時先不做
 create table EmployeeTeam(
     EmployeeTeamID int PRIMARY key AUTO_INCREMENT,
@@ -64,7 +69,7 @@ create table EmployeeSubstitute(
     EmployeeSubstituteID int AUTO_INCREMENT primary key,
     EmployeeID varchar(20) not NULL,
     SubstituteEmployeeID varchar(20) not NULL
-)
+);
 
 create table LeaveDayApply (
 	ApplyNo varchar(40) not NULL primary key,
@@ -95,16 +100,16 @@ create table LeaveDayState (
 )
 
 insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
-values('A','通過')
+values('A','通過');
 
 insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
-values('C','審核中')
+values('C','審核中');
 
 insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
-values('N','新單')
+values('N','新單');
 
 insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
-values('D','不同意')
+values('D','不同意');
 
 create table LeaveDayKind(
     LeaveDayKindID varchar(20) primary key,
