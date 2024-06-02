@@ -17,10 +17,10 @@
         <div class="menu_button"><button onclick="toggleVisibility('employmenu');">員工管理</button><br/></div>
         <!-- <img style="top:20px;" src="./Img/add_icon.png" /> -->
         <div id="employmenu" class="visible">
-            <div class="submenu_button" id="EmploymenuFun1"><button onclick="focusSelectedSubmenuButton('EmploymenuFun1');">員工組別</button><br/></div>
-            <div class="submenu_button" id="EmploymenuFun2"><button onclick="focusSelectedSubmenuButton('EmploymenuFun2');">員工小組成員管理</button><br/></div>
-            <div class="submenu_button" id="EmploymenuFun3"><button onclick="focusSelectedSubmenuButton('EmploymenuFun3');">員工權限</button><br/></div>
-            <div class="submenu_button" id="EmploymenuFun4"><button onclick="focusSelectedSubmenuButton('EmploymenuFun4');">員工帳號</button><br/></div>
+            <div class="submenu_button" id="EmploymenuFun1"><a href="" onclick="focusSelectedSubmenuButton('EmploymenuFun1');">員工組別</a><br/></div>
+            <div class="submenu_button" id="EmploymenuFun2"><a href="View_EmployAccount.php" onclick="focusSelectedSubmenuButton('EmploymenuFun2');">員工小組成員管理</a><br/></div>
+            <div class="submenu_button" id="EmploymenuFun3"><a href="View_EmployClass.php" onclick="focusSelectedSubmenuButton('EmploymenuFun3');">員工權限</a><br/></div>
+            <div class="submenu_button" id="EmploymenuFun4"><a href="View_EmployAccount.php"  onclick="focusSelectedSubmenuButton('EmploymenuFun4');">員工帳號</a><br/></div>
             <div class="submenu_button" id="EmploymenuFun5"><button onclick="focusSelectedSubmenuButton('EmploymenuFun5');">員工權限列表</button><br/></div>
             <div class="submenu_button" id="EmploymenuFun6"><button onclick="focusSelectedSubmenuButton('EmploymenuFun6');">員工代理人</button><br/></div>
             <div class="submenu_button" id="EmploymenuFun6"><button onclick="focusSelectedSubmenuButton('EmploymenuFun7');">修改密碼</button><br/></div>

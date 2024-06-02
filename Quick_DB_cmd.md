@@ -35,6 +35,42 @@ insert into Employee (
     '爸爸', '0912345678' , now()
 );
 
+insert into Employee (
+    EmployeeID, ChtName, PersonalID, Password, 
+    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+) values (
+    'EMP00260', '寧采臣', 'A12345679', 'EMP00260',
+    '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
+    '爸爸', '0912345678' , now()
+);
+
+insert into Employee (
+    EmployeeID, ChtName, PersonalID, Password, 
+    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+) values (
+    'EMP00261', '寧采臣', 'A12345679', 'EMP00261',
+    '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
+    '爸爸', '0912345678' , now()
+);
+
+insert into Employee (
+    EmployeeID, ChtName, PersonalID, Password, 
+    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+) values (
+    'EMP00262', '寧采臣', 'A12345679', 'EMP00262',
+    '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
+    '爸爸', '0912345678' , now()
+);
+
+insert into Employee (
+    EmployeeID, ChtName, PersonalID, Password, 
+    Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
+) values (
+    'EMP00263', '寧采臣', 'A12345679', 'EMP00263',
+    '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
+    '爸爸', '0912345678' , now()
+);
+
 
 create table SignRecords(
     EmployeeID varchar(20) not NULL,
@@ -50,6 +86,7 @@ create table EmployeeClass(
 
 insert into EmployeeClass(EmployeeClassName) values ('組長');
 insert into EmployeeClass(EmployeeClassName) values ('職員');
+insert into EmployeeClass(EmployeeClassName) values ('部門主任');
 
 create table EmployeeClassRelation(
     EmployeeClassRelationID int PRIMARY key AUTO_INCREMENT,
@@ -57,9 +94,25 @@ create table EmployeeClassRelation(
     EmployeeClassID int not NULL
 );
 
-drop database AttendanceSystem;
+insert into EmployeeClassRelation(EmployeeID, EmployeeClassID)
+values('EMP00258', 1);
 
--- 暫時先不做
+insert into EmployeeClassRelation(EmployeeID, EmployeeClassID)
+values('EMP00259', 1);
+
+insert into EmployeeClassRelation(EmployeeID, EmployeeClassID)
+values('EMP00260', 1);
+
+insert into EmployeeClassRelation(EmployeeID, EmployeeClassID)
+values('EMP00261', 2);
+
+insert into EmployeeClassRelation(EmployeeID, EmployeeClassID)
+values('EMP00262', 2);
+
+insert into EmployeeClassRelation(EmployeeID, EmployeeClassID)
+values('EMP00262', 3);
+
+
 create table EmployeeTeam(
     EmployeeTeamID int PRIMARY key AUTO_INCREMENT,
     EmployeeTeamName nvarchar(60) not NULL
@@ -71,6 +124,7 @@ create table EmployeeSubstitute(
     SubstituteEmployeeID varchar(20) not NULL
 );
 
+
 create table LeaveDayApply (
 	ApplyNo varchar(40) not NULL primary key,
     LeaveBeginDate TIMESTAMP not NULL,
@@ -81,23 +135,24 @@ create table LeaveDayApply (
     CurrentStep int not NULL,
     LeaveDayKindID varchar(20) not NULL,
     FinalStep int not NULL,
-    LeaveDayStateID varuchar(5) not NULL,
+    LeaveDayStateID varchar(5) not NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 create table LeaveDayApplyDetail (
-    ApplyNo varchar(40) not NULL primary key,
+    ApplyNo varchar(40) not NULL ,
     Step int not NULL,
     EmployeeID varchar(20) not NULL,
     SignTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    IsApprove bit not default 0
-)
+    IsApprove bit not null 
+);
 
 -- 無法使用功能維護 通過 審核中 新單 不同意
+
 create table LeaveDayState (
-    LeaveDayStateID varchar(5) not NULL primary key,
+    LeaveDayStateID varchar(5) not NULL,
     LeaveDayStateName varchar(40) not NULL
-)
+);
 
 insert into LeaveDayState (LeaveDayStateID, LeaveDayStateName)
 values('A','通過');
@@ -125,5 +180,7 @@ create table LeaveSignLevel(
 create table LeaveSignLevelEveryStep(
     LeaveSignLevelID varchar(20) not NULL,
     LeaveSignLevelStep int not NULL,
-    EmployeeID varchar(20) not NULL,
+    EmployeeID varchar(20) not NULL
 );
+
+-- drop database AttendanceSystem;

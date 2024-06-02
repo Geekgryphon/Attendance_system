@@ -19,12 +19,12 @@
                 $oDb = new DB();    
 
                 if(count($_POST) > 0){
-                    $oDb->query("SELECT * FROM LeaveDayState where LeaveDayStateID = ? and LeaveDayStateName = ? ", array($_POST["LeaveDayStateID"], $_POST["LeaveDayStateName"]));
+                    $oDb->query("SELECT * FROM LeaveDayKind where LeaveDayKindID = ? and LeaveDayKindName = ? ", array($_POST["LeaveDayKindID"], $_POST["LeaveDayKindName"]));
                     if ($oDb->rowCount() > 0){
-                        echo "已有重複的審核狀態，新增失敗";
+                        echo "已有重複的假別，新增失敗";
                     }else{
-                        $oDb->query("INSERT INTO LeaveDayState(LeaveDayStateID, LeaveDayStateName) VALUES(?, ?) ", array($_POST["LeaveDayStateID"], $_POST["LeaveDayStateName"]));
-                        header("Location: View_LeaveDayState.php");
+                        $oDb->query("INSERT INTO LeaveDayKind(LeaveDayKindID, LeaveDayKindName, IsActive) VALUES(?, ?, 1) ", array($_POST["LeaveDayKindID"], $_POST["LeaveDayKindName"]));
+                        header("Location: View_LeaveDayKind.php");
                     }
                 }
                 
@@ -36,12 +36,12 @@
                 require_once "../../Common/View/SignInSuccess.php";
                 $oDb = new DB();
             ?>
-            <form action="new_LeaveDayState.php" method="post">
-                <label for="">假別審核代碼:</label>
-                <input type="text"  name="LeaveDayStateID">
+            <form action="new_LeaveDayKind.php" method="post">
+                <label for="">假別代碼:</label>
+                <input type="text"  name="LeaveDayKindID">
                 <br/>
-                <label for="">假別審核名稱:</label>
-                <input type="text"  name="LeaveDayStateName">
+                <label for="">假別名稱:</label>
+                <input type="text"  name="LeaveDayKindName">
                 <br/>
                 <button name="cmd" value="new">新增</button>
             </form>

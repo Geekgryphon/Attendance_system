@@ -24,18 +24,18 @@
                 $oDb = new DB();
 
                 if(count($_POST) > 0){
-                   $oDb->query("UPDATE LeaveDayState SET LeaveDayStateName = ? where LeaveDayStateID = ? ", array($_POST["LeaveDayStateName"],$_POST["LeaveDayStateID"]));
-                   header("Location: View_LeaveDayState.php");
+                   $oDb->query("UPDATE LeaveDayKind SET LeaveDayKindName = ? where LeaveDayKindID = ? ", array($_POST["LeaveDayKindName"],$_POST["LeaveDayKindID"]));
+                   header("Location: View_LeaveDayKind.php");
                 }
 
                 require_once "../../Common/View/SignInSuccess.php";
 
 
-                $oDb->query("SELECT LeaveDayStateName FROM LeaveDayState where LeaveDayStateID = ? ", array($_GET["LeaveDayStateID"]));
+                $oDb->query("SELECT LeaveDayKindName FROM LeaveDayKind where LeaveDayKindID = ? ", array($_GET["LeaveDayKindID"]));
                 
-                echo "<form action='edit_LeaveDayState.php' method='post'>";
-                echo "<input type='hidden' name='LeaveDayStateID' value='" . $_GET["LeaveDayStateID"] ."'/>";
-                echo "<input type='text'  name='LeaveDayStateName' value='" . $oDb->fetch(0)['LeaveDayStateName'] . "'><br/>";
+                echo "<form action='edit_LeaveDayKind.php' method='post'>";
+                echo "<input type='hidden' name='LeaveDayKindID' value='" . $_GET["LeaveDayKindID"] ."'/>";
+                echo "<input type='text'  name='LeaveDayKindName' value='" . $oDb->fetch(0)['LeaveDayKindName'] . "'><br/>";
                 echo "<button name='cmd' value='edit'>更新</button>";
                 echo "</form>";
             ?>

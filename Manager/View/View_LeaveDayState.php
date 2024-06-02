@@ -37,8 +37,8 @@
 
             <table>
                 <tr>
-                    <td>假別代碼</td>
-                    <td>假名稱</td>
+                    <td>假別審核代碼</td>
+                    <td>假別審核名稱</td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -48,8 +48,8 @@
                         echo "<tr>";
                         echo "<td>" . $row["LeaveDayStateID"] . "</td>";
                         echo "<td>" . $row["LeaveDayStateName"] . "</td>";
-                        echo "<td><a href='edit_LeaveDayState.php?cmd=edit&LeaveDayStateID=". $row["EmployeeClassID"] ."'>編輯</a>";
-                        echo "<td><a href='delete_LeaveDayState.php?cmd=delete&LeaveDayStateID=". $row["EmployeeClassID"] ."'>刪除</a>";
+                        echo "<td><a href='edit_LeaveDayState.php?cmd=edit&LeaveDayStateID=". $row["LeaveDayStateID"] ."'>編輯</a>";
+                        echo "<td><a href='delete_LeaveDayState.php?cmd=delete&LeaveDayStateID=". $row["LeaveDayStateID"] ."'>刪除</a>";
                         echo "</tr>";
                     }
                     

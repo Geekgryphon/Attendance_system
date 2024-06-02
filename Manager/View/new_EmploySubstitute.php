@@ -56,13 +56,13 @@
                     $SelectedSubstituteEmployee .= "<SELECT name='SubstituteEmployeeID' id='SubstituteEmployeeID' >";
                     for($i = 0; $i < $count; $i++){
                         $data = $oDb->fetch(0);
-                        $SelectedSubstituteEmployee .= "<option value=" . $data['Value'] . ">" . $data['SubstituteEmployeeID'] . "</option>";
+                        $SelectedSubstituteEmployee .= "<option value=" . $data['Value'] . ">" . $data['ChtName'] . "</option>";
                     }
                     $SelectedSubstituteEmployee .= "</SELECT>";
                 }
             ?>
 
-            <form action="new_EmployeeSubstitute.php" method="post">
+            <form action="new_EmploySubstitute.php" method="post">
                 <?php echo $SelectedEmploy; ?>
                 <br/>
                 <?php echo $SelectedSubstituteEmployee; ?>

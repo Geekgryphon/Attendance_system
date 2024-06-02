@@ -14,7 +14,7 @@
     <div style="display:flex; flex-wrap:nowrap">
         <div style="flex:1;">
             <?php 
-                // require_once "menu.php";
+                require_once "menu.php";
                 
             ?>
         </div>
