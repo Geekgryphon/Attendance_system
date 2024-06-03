@@ -39,7 +39,7 @@ insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
-    'EMP00260', '寧采臣', 'A12345679', 'EMP00260',
+    'EMP00260', '姥姥', 'A12345679', 'EMP00260',
     '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
     '爸爸', '0912345678' , now()
 );
@@ -48,7 +48,7 @@ insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
-    'EMP00261', '寧采臣', 'A12345679', 'EMP00261',
+    'EMP00261', '小青', 'A12345679', 'EMP00261',
     '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
     '爸爸', '0912345678' , now()
 );
@@ -57,7 +57,7 @@ insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
-    'EMP00262', '寧采臣', 'A12345679', 'EMP00262',
+    'EMP00262', '法海', 'A12345679', 'EMP00262',
     '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
     '爸爸', '0912345678' , now()
 );

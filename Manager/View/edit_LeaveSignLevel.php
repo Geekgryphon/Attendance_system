@@ -25,6 +25,15 @@
 
                 if(count($_POST) > 0){
                    $oDb->query("UPDATE LeaveSignLevel SET LeaveSignLevelName = ? where LeaveSignLevelID = ? ", array($_POST["LeaveSignLevelName"],$_POST["LeaveSignLevelID"]));
+
+                   $oDb->query("DELETE FROM LeaveSignLevelEveryStep WHERE LeaveSignLevelID = ? ", array($_POST["LeaveSignLevelID"]));
+
+                    for($i = 1; $i < 3 ; $i++){
+                    $oDb->query("INSERT INTO LeaveSignLevelEveryStep(LeaveSignLevelID, 
+                                    LeaveSignLevelStep, EmployeeID) VALUES(?, ?, ?) "
+                                    , array($_POST["LeaveSignLevelID"], $i, $_POST["Stage" . $i]));
+                    }
+
                    header("Location: View_LeaveSignLevel.php");
                 }
 

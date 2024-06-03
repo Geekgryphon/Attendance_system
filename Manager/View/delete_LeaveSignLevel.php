@@ -25,6 +25,7 @@
                 $oDb = new DB();
 
                 if(isset($_GET) and $_GET["cmd"] == 'delete'){
+                    $oDb->query("DELETE from LeaveSignLevelEveryStep where LeaveSignLevelID = ?", array($_GET["LeaveSignLevelID"]));
                     $oDb->query("DELETE from LeaveSignLevel where LeaveSignLevelID = ?", array($_GET["LeaveSignLevelID"]));
                     header("Location: View_LeaveSignLevel.php");
                 }
