@@ -66,7 +66,7 @@ insert into Employee (
     EmployeeID, ChtName, PersonalID, Password, 
     Phone, Address, Email, IsOutOfWork, EmergencyContact, EmergencyPhone, created_at
 ) values (
-    'EMP00263', '寧采臣', 'A12345679', 'EMP00263',
+    'EMP00263', '刺客', 'A12345679', 'EMP00263',
     '0912345678' ,'北興東路五號', 'example@gmail.com', 1,
     '爸爸', '0912345678' , now()
 );
@@ -143,7 +143,7 @@ create table LeaveDayApplyDetail (
     ApplyNo varchar(40) not NULL ,
     Step int not NULL,
     EmployeeID varchar(20) not NULL,
-    SignTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    SignTime TIMESTAMP NULL,
     IsApprove bit not null 
 );
 
