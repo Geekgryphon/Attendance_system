@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php 
+
         require_once "Common/Function/DB.php";
         require_once "Common/Function/Session.php";
 
@@ -14,7 +15,11 @@
         $oSession = new Session();
 
         if(count($_POST) > 0){
+            ini_set('session.gc_maxlifetime', 1800);
+            session_start();
             $oSession->Login($_POST["account"], $_POST["password"]);
+
+            $oSession->CheckLogin();
         }
 
         

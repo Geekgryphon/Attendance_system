@@ -22,8 +22,10 @@
             <a href="new_LeaveDayKind.php">新增</a>
             <?php 
                  require_once "../../Common/Function/DB.php";
+                 require_once "../../Common/Function/Session.php";
                  require_once "../../Common/View/SignInSuccess.php";
-                 $oDb = new DB();                 
+                 $oDb = new DB();
+                 $oSession = new Session();                 
 
 
                 $oDb->query("SELECT b.LeaveDayStateName,a.ApplyNo,a.CurrentStep, c.LeaveDayKindName
@@ -33,7 +35,9 @@
                 $counts = $oDb->rowCount();
                 $page = array();
 
-        
+                session_start();
+                var_dump($_SESSION);
+
                
             ?>
             <?php  if($counts > 0) { ?>

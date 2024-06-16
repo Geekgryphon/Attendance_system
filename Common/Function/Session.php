@@ -19,7 +19,6 @@ Class Session{
         $IsCorrectLoginData = ($this->oDb->rowCount() > 0 ? true: false);
 
         if($IsCorrectLoginData){
-            ini_set('session.gc_maxlifetime', 1800);
             session_start();
             $_SESSION["userid"] = $this->oDb->fetch(0)['EmployeeID'];
             return true;
@@ -29,11 +28,17 @@ Class Session{
 
     }
 
-    public function CheckLogin(){
-        if(isset($_SESSION)){
-            // Continue use system
-        }else{
-            header("Location: login.php");
+    public function CheckLogin($location){
+        if(isset($_SESSION["userid"]) and $location == ''){
+            header("Location: ./../Manager/View/View_LeaveApply.php");
+        }else if(isset($_SESSION["userid"]) and $location != ''){
+            header("Location: ./../Manager/" . $location);
+        }else if(!isset($_SESSION["userid"])){
+            session_destroy();
+            header("Location: ./../login.php");
+        }
+        else{
+            header("Location: ./../login.php");
         }
         
     }
